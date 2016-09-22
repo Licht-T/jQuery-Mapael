@@ -1337,7 +1337,7 @@
 
             if (elemOptions.x !== undefined && elemOptions.y !== undefined)
                 coords = {x: elemOptions.x, y: elemOptions.y};
-            else if (elemOptions.plotsOn !== undefined && self.areas[elemOptions.plotsOn].mapElem !== undefined){
+            else if (elemOptions.plotsOn !== undefined && self.areas[elemOptions.plotsOn] !== undefined){
                 var path = self.areas[elemOptions.plotsOn].mapElem;
                 var bbox = path.getBBox();
                 var _x = Math.floor(bbox.x + bbox.width/2.0);
