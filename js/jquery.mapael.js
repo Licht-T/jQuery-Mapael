@@ -1153,14 +1153,31 @@
                     p2 = linksCollection[id].between[1];
                 }
 
-                if (p1.latitude !== undefined && p1.longitude !== undefined) {
+                // fooobar
+                if (p1.plotsOn !== undefined && self.areas[p1.plotsOn].mapElem !== undefined) {
+                    var path = self.areas[p1.plotsOn].mapElem;
+                    var bbox = path.getBBox();
+                    var _x = Math.floor(bbox.x + bbox.width / 2.0);
+                    var _y = Math.floor(bbox.y + bbox.height / 2.0);
+                    coordsP1.x = _x;
+                    coordsP1.y = _y;
+                }
+                else if (p1.latitude !== undefined && p1.longitude !== undefined) {
                     coordsP1 = self.mapConf.getCoords(p1.latitude, p1.longitude);
                 } else {
                     coordsP1.x = p1.x;
                     coordsP1.y = p1.y;
                 }
 
-                if (p2.latitude !== undefined && p2.longitude !== undefined) {
+                if (p2.plotsOn !== undefined && self.areas[p2.plotsOn].mapElem !== undefined) {
+                    var path = self.areas[p2.plotsOn].mapElem;
+                    var bbox = path.getBBox();
+                    var _x = Math.floor(bbox.x + bbox.width / 2.0);
+                    var _y = Math.floor(bbox.y + bbox.height / 2.0);
+                    coordsP2.x = _x;
+                    coordsP2.y = _y;
+                }
+                else if (p2.latitude !== undefined && p2.longitude !== undefined) {
                     coordsP2 = self.mapConf.getCoords(p2.latitude, p2.longitude);
                 } else {
                     coordsP2.x = p2.x;
