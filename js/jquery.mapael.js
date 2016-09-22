@@ -1153,8 +1153,7 @@
                     p2 = linksCollection[id].between[1];
                 }
 
-                // fooobar
-                if (p1.plotsOn !== undefined && self.areas[p1.plotsOn].mapElem !== undefined) {
+                if (p1.plotsOn !== undefined && self.areas[p1.plotsOn] !== undefined) {
                     var path = self.areas[p1.plotsOn].mapElem;
                     var bbox = path.getBBox();
                     var _x = Math.floor(bbox.x + bbox.width / 2.0);
@@ -1169,7 +1168,7 @@
                     coordsP1.y = p1.y;
                 }
 
-                if (p2.plotsOn !== undefined && self.areas[p2.plotsOn].mapElem !== undefined) {
+                if (p2.plotsOn !== undefined && self.areas[p2.plotsOn] !== undefined) {
                     var path = self.areas[p2.plotsOn].mapElem;
                     var bbox = path.getBBox();
                     var _x = Math.floor(bbox.x + bbox.width / 2.0);
